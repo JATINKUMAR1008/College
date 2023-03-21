@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class Collection {
+    public static void main(String[] args) {
+        Set<Integer> s1 = new HashSet();
+        s1.add(1);
+        s1.add(2);
+        s1.add(3);
+
+        System.out.println("Set 1: "+s1);
+
+        List list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        Set s2 = new HashSet(list);
+
+        System.out.println("list: "+list);
+        System.out.println("set 2:"+s2);
+
+        System.out.println("Check if it contains all the elements of list: "+s2.containsAll(list));
+
+        System.out.println("Compare set1 and set2 : "+ s1.equals(s2));
+
+        s1.remove(1);
+        System.out.println("Compare after removing element: "+s1.equals(s2));
+
+        Integer array[] = s1.toArray(new Integer[s1.size()]);
+        System.out.println("Array from set 1: "+ Arrays.toString(array));
+
+        for(Integer i: s1){
+            System.out.println("Element: "+i);
+        }
+
+    }
+}
